@@ -1,7 +1,12 @@
 class DogController < ApplicationController
     def index
-        dogs = dog.includes(:owner).order("created_at DESC")
-        render json: dogs, include: :owner
+        dogs = Dog.includes(:owners).order("created_at DESC")
+        render json: dogs, include: :owners
+    end
+
+    def show
+        dog = Dog.includes(:owners).find(params[:id])
+        render json: dog, include: :owners
     end
 
     def create

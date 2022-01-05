@@ -4,6 +4,11 @@ class OwnerController < ApplicationController
         render json: owners, include: :dogs
     end
 
+    def show
+        owner = Owner.includes(:dogs).find(params[:id])
+        render json: owner, include: :dogs
+    end
+
     def create
         owner = Owner.create(owner_param)
         render json: owner

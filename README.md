@@ -1,24 +1,8 @@
-# README
+# Owners-dogs api
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a ruby on rails api for my Owners-dogs project. The database holds owner and dog info in a many to many relationship. The api provides endpoints for retrieving and modifying the data. 
 
-Things you may want to cover:
+##Starting the server
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. cd into the directory
+2. run: bundle && rails db:drop db:create db:migrate db:seed && rails s
